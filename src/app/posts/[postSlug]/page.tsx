@@ -14,8 +14,8 @@ export async function generateMetadata(
   
   return {
     title: post.title,
-    description: post.excerpt,
-    keywords: post.excerpt,
+    description: `${post.excerpt} hodleveryday.com`,
+    keywords: `${post.excerpt},hodleveryday.com`,
   };
 }
 
