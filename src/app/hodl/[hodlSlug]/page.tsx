@@ -3,14 +3,14 @@ import React from "react";
 import { getPost } from "../../ghost/post";
 
 type Props = {
-  params: { postSlug: string };
+  params: { hodlSlug: string };
 };
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = await getPost(params?.postSlug);
+  const post = await getPost(params?.hodlSlug);
   
   return {
     title: post.title,
@@ -20,7 +20,7 @@ export async function generateMetadata(
 }
 
 async function page({ params }: any) {
-  const post = await getPost(params?.postSlug);
+  const post = await getPost(params?.hodlSlug);
 
   return (
     <div>
