@@ -5,7 +5,6 @@ import Affiliate from "./components/affiliate";
 
 export default async function Home() {
   const blogs = await getPosts();
-  console.log(blogs);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
