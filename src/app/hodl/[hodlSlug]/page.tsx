@@ -2,6 +2,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import React from "react";
 import { getPost } from "../../ghost/post";
 import parse from 'html-react-parser';
+import AffiliateCard from "@/app/components/affiliateCard";
 
 type Props = {
   params: { hodlSlug: string };
@@ -46,13 +47,14 @@ async function page({ params }: any) {
   const post = await getPost(params?.hodlSlug);
 
   return (
-    <div className="flex w-full h-full justify-center items-center flex-col text-[1.2rem] font-sans text-[#393939] p-4 md:p-0">
+    <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] p-4 md:p-0">
         <div className="w-full md:w-[50%] lg:w-[40%] break-words">
-          <h1 className="text-[2.8rem] font-bold">{post.title}</h1>
+          <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">{post.title}</h1>
           <div className="flex justify-center items-center">
-            <img src={post.feature_image} alt={post.title} />
+            <img src={post.feature_image} alt={post.title} className="w-[150px] h-[150px] md:w-[300px] md:h-[300px]"/>
           </div>
           {parse(post.html)}
+          <AffiliateCard />
         </div>
     </div>
   );
