@@ -2,7 +2,7 @@ import React from "react";
 
 function affiliateCard() {
   return (
-    <div>
+    <div className="my-8">
       <figure className="kg-card kg-bookmark-card">
         <a
           className="kg-bookmark-container"
@@ -44,6 +44,30 @@ function affiliateCard() {
           <div className="kg-bookmark-thumbnail">
             <img
               src="https://public.bnbstatic.com/static/images/common/ogImage.jpg"
+              alt=""
+            />
+          </div>
+        </a>
+      </figure>
+      <figure className="kg-card kg-bookmark-card">
+        <a
+          className="kg-bookmark-container"
+          href="https://www.bitkub.com/signup?ref=4441"
+        >
+          <div className="kg-bookmark-content">
+            <div className="kg-bookmark-title">
+              Bitkub.com
+            </div>
+            <div className="kg-bookmark-description">
+              Bitkub แพลตฟอร์มเทรดเหรียญดิจิทัลด้วยเงินบาทแห่งแรกของไทย ซึ่งได้รับการรับรองอย่างถูกต้องจาก กลต. พร้อมให้บริการโดยเจ้าหน้าที่คนไทยตลอด 24 ชม.
+            </div>
+            <div className="kg-bookmark-metadata">
+              <span className="kg-bookmark-author">Bitkub</span>
+            </div>
+          </div>
+          <div className="kg-bookmark-thumbnail">
+            <img
+              src="https://images.workpointtoday.com/workpointnews/2021/05/20205600/1621518944_38591_web_bizview3.jpg"
               alt=""
             />
           </div>
