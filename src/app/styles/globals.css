@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+p {
+  margin-top: 1.5rem;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-left: 1rem;
+}
+
+li {
+  margin-top: 0.5rem;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #5585ff;
+}
+
+strong, h1 {
+    color: rgb(11, 11, 11);
+}

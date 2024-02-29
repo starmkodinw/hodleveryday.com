@@ -19,9 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <p>Layout 1</p>
         <Nav />
+        {children}
         <Affiliate />
       </body>
     </html>
