@@ -27,6 +27,9 @@ async function page({ params }: any) {
     <div className="flex w-full h-full justify-center items-center flex-col text-[1.2rem] font-sans text-[#393939]">
         <div className="w-[40%]">
           <h1 className="text-[2.8rem] font-bold">{post.title}</h1>
+          <div className="flex justify-center items-center">
+            <img src={post.feature_image} alt={post.title} />
+          </div>
           {parse(post.html)}
         </div>
     </div>
