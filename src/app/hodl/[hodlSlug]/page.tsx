@@ -14,6 +14,7 @@ export async function generateMetadata(
   const post = await getPost(params?.hodlSlug);
   
   return {
+    robots: "index, follow",
     title: post.title,
     description: post.excerpt,
     keywords: [post.excerpt, "hodleveryday.com", "bitcoin", "BTC"],
