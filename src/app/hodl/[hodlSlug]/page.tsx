@@ -51,7 +51,7 @@ async function page({ params }: any) {
         <div className="w-full md:w-[50%] lg:w-[40%] break-words">
           <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">{post.title}</h1>
           <div className="flex justify-center items-center">
-            <img src={post.feature_image} alt={post.title} className="w-[150px] h-[150px] md:w-[300px] md:h-[300px]"/>
+            <img src={post.feature_image} alt={post.title}/>
           </div>
           {parse(post.html)}
           <AffiliateCard />
