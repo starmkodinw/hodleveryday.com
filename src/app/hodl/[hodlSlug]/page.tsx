@@ -8,6 +8,7 @@ import parse from "html-react-parser";
 import AffiliateCard from "@/app/components/affiliateCard";
 import Related from "@/app/components/related";
 import Divider from "@/app/components/divider";
+import Image from "next/image";
 
 type Props = {
   params: { hodlSlug: string };
@@ -93,14 +94,14 @@ async function page({ params }: any) {
           {post.title}
         </h1>
         <div className="flex justify-center items-center mt-[1rem]">
-          <img src={post.feature_image} alt={post.title} />
+          <Image src={post.feature_image} alt={post.title} />
         </div>
         {parse(post.html)}
         <AffiliateCard />
         <Divider/>
         <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">Recommended from Hodleveryday.com</h2>
         {postRelated?.map((blog: any) => (
-          <Related blog={blog}/>
+          <Related key={blog.id} blog={blog}/>
         ))}
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { getPosts } from "../ghost/post";
 import Link from "next/link";
+import Image from "next/image";
 
 async function blog() {
     const blogs = await getPosts();
@@ -17,7 +18,7 @@ async function blog() {
       {blogs?.map((blog: any) => (
         <Link href={`/hodl/${blog.slug}`} key={blog.id} className="no-underline">
           <div key={blog.id} className="mb-[3rem] flex w-full h-[150px]">
-            <img
+            <Image
               src={blog.feature_image}
               alt={blog.title}
               className="w-[150px] md:w-[200px] lg:w-[250px] object-cover"

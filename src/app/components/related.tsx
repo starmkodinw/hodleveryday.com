@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function related({ blog }: any) {
   return (
     <Link href={`/hodl/${blog.slug}`} key={blog.id} className="no-underline">
       <div key={blog.id} className="mb-[3rem] flex w-full h-[150px]">
-        <img
+        <Image
           src={blog.feature_image}
           alt={blog.title}
           className="w-[150px] md:w-[200px] lg:w-[250px] object-cover"

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function affiliateCard() {
   return (
@@ -16,7 +17,7 @@ function affiliateCard() {
             </div>
           </div>
           <div className="kg-bookmark-thumbnail">
-            <img
+            <Image
               src="https://hodleveryday.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpixel%20-%20logo.badb0d19.png&amp;w=384&amp;q=75"
               alt="affiliateCard-hodleveryday.com"
             />
@@ -42,7 +43,7 @@ function affiliateCard() {
             </div>
           </div>
           <div className="kg-bookmark-thumbnail">
-            <img
+            <Image
               src="https://public.bnbstatic.com/static/images/common/ogImage.jpg"
               alt="affiliateCard-binance.com"
             />
@@ -66,7 +67,7 @@ function affiliateCard() {
             </div>
           </div>
           <div className="kg-bookmark-thumbnail">
-            <img
+            <Image
               src="https://images.workpointtoday.com/workpointnews/2021/05/20205600/1621518944_38591_web_bizview3.jpg"
               alt="affiliateCard-bitkub.com"
             />
