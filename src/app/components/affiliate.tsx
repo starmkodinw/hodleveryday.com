@@ -7,7 +7,7 @@ import lazadaFlash from "../assets/lazada-flash.png";
 
 function affiliate() {
   return (
-    <div className="flex h-full w-full justify-center items-center gap-4">
+    <div className="flex h-full w-full justify-between items-center gap-4">
       <a
         href="https://www.bitkub.com/signup?ref=4441"
         target="_blank"
@@ -15,10 +15,10 @@ function affiliate() {
       >
         <Image
           src={bitkub}
-          width={100}
-          height={100}
+          width={1920}
+          height={1080}
           alt="Picture of the author"
-          className="rounded-full cursor-pointer"
+          className="rounded-full cursor-pointer w-[100px] h-[100px] object-cover"
         />
       </a>
       <a
@@ -28,10 +28,10 @@ function affiliate() {
       >
         <Image
           src={binance}
-          width={100}
-          height={100}
+          width={1920}
+          height={1080}
           alt="Picture of the author"
-          className="rounded-full cursor-pointer"
+          className="rounded-full cursor-pointer w-[100px] h-[100px] object-cover"
         />
       </a>
       <a
@@ -41,10 +41,10 @@ function affiliate() {
       >
         <Image
           src={lazada}
-          width={300}
-          height={300}
+          width={1920}
+          height={1080}
           alt="Picture of the author"
-          className="cursor-pointer rounded-xl"
+          className="cursor-pointer rounded-xl w-[300px] h-[300px] object-cover"
         />
       </a>
       <a
@@ -54,10 +54,10 @@ function affiliate() {
       >
         <Image
           src={lazadaFlash}
-          width={300}
-          height={300}
+          width={1920}
+          height={1080}
           alt="Picture of the author"
-          className="cursor-pointer rounded-xl"
+          className="cursor-pointer rounded-xl w-[300px] h-[300px] object-cover"
         />
       </a>
     </div>

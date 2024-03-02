@@ -94,7 +94,13 @@ async function page({ params }: any) {
           {post.title}
         </h1>
         <div className="flex justify-center items-center mt-[1rem]">
-          <Image src={post.feature_image} alt={post.title} />
+          <Image 
+            width={1920}
+            height={1080}
+            src={post.feature_image} 
+            alt={post.title}
+            className="max-h-[350px] object-cover"
+          />
         </div>
         {parse(post.html)}
         <AffiliateCard />

@@ -11,10 +11,10 @@ function nav() {
         <Link href="/">
           <Image
             src={logo}
-            width={65}
-            height={65}
+            width={1920}
+            height={1080}
             alt="Picture of hodleveryday.com"
-            className="rounded-full cursor-pointer"
+            className="w-[65px] h-[65px] rounded-full cursor-pointer"
           />
         </Link>
         <Link href="/" className="no-underline font-normal text-black">
@@ -24,10 +24,10 @@ function nav() {
       <div>
         <Image
           src={btc}
-          width={32}
-          height={32}
+          width={1920}
+          height={1080}
           alt="profile"
-          className="rounded-full cursor-pointer"
+          className="w-[32px] h-[32px] rounded-full cursor-pointer"
         />
       </div>
     </header>
