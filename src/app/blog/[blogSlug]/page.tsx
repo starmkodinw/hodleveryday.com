@@ -1,9 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import React from "react";
-import {
-  getPost,
-  getPostsByTags,
-} from "../../ghost/post";
+import { getPost, getPosts, getPostsByTags } from "../../ghost/post";
 import parse from "html-react-parser";
 import AffiliateCard from "@/app/components/affiliateCard";
 import Related from "@/app/components/related";
@@ -13,6 +10,12 @@ import Image from "next/image";
 type Props = {
   params: { blogSlug: string };
 };
+
+export async function generateStaticParams() {
+  const blogs = await getPosts();
+
+  return blogs.map(({ slug }: any) => slug);
+}
 
 export async function generateMetadata(
   { params }: Props,
@@ -94,20 +97,22 @@ async function page({ params }: any) {
           {post.title}
         </h1>
         <div className="flex justify-center items-center mt-[1rem]">
-          <Image 
+          <Image
             width={1920}
             height={1080}
-            src={post.feature_image} 
+            src={post.feature_image}
             alt={post.title}
             className="max-h-[350px] object-cover"
           />
         </div>
         {parse(post.html)}
         <AffiliateCard />
-        <Divider/>
-        <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">Recommended from Hodleveryday.com</h2>
+        <Divider />
+        <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
+          Recommended from Hodleveryday.com
+        </h2>
         {postRelated?.map((blog: any) => (
-          <Related key={blog.id} blog={blog}/>
+          <Related key={blog.id} blog={blog} />
         ))}
       </div>
     </div>
