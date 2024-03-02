@@ -3,10 +3,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy - hodleveryday.com",
   description: "Privacy Policy hodleveryday.com เคารพความเป็นส่วนตัวของผู้ใช้ของเรา นโยบายความเป็นส่วนตัวนี้อธิบายถึงประเภทของข้อมูลที่เรารวบรวม วิธีการใช้งาน และตัวเลือกที่คุณเชื่อมโยงกับข้อมูลของคุณ",
-  robots: {
-    index: false,
-    follow: true,
-  },
 };
 
 export default function PrivacyPolicy() {
