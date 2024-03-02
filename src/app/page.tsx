@@ -1,6 +1,6 @@
 import Nav from "./components/nav";
 import Footer from "./components/footer";
-import Blogs from "./components/blog";
+import Blogs from "./components/blogs";
 
 export default async function Home() {
 

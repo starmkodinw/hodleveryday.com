@@ -13,7 +13,7 @@ function footer() {
     "Teams",
   ];
   return (
-    <footer className="flex justify-center items-center text-center w-full h-[68px] bg-white border-[1px]">
+    <footer className="flex justify-center items-center text-center w-full h-[68px] bg-white border-[1px] flex-wrap">
       {datas.map((data) => (
         <Link
           href="/"
