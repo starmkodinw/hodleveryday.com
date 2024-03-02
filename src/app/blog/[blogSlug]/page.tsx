@@ -24,7 +24,7 @@ export async function generateMetadata(
   const post = await getPost(params?.blogSlug);
 
   return {
-    robots: "index, follow",
+    robots: "index,follow",
     title: post.title,
     description: post.excerpt,
     keywords: [post.excerpt, "hodleveryday.com", "bitcoin", "BTC"],
@@ -40,7 +40,7 @@ export async function generateMetadata(
     ],
     openGraph: {
       type: "article",
-      url: `https://hodleveryday.com/hodl/${params?.blogSlug}`,
+      url: `https://hodleveryday.com/blog/${params?.blogSlug}`,
       title: post.title,
       description: post.excerpt,
       siteName: "hodleveryday",
@@ -91,31 +91,36 @@ async function page({ params }: any) {
   }
 
   return (
-    <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] p-4 md:p-0 font-light">
-      <div className="w-full md:w-[50%] lg:w-[40%] break-words mt-[75px]">
-        <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">
-          {post.title}
-        </h1>
-        <div className="flex justify-center items-center mt-[1rem]">
-          <Image
-            width={1920}
-            height={1080}
-            src={post.feature_image}
-            alt={post.title}
-            className="max-h-[350px] object-cover"
-          />
+    <>
+      <head>
+        <link rel="canonical" href={`https://hodleveryday.com/blog/${params?.blogSlug}`} />
+      </head>
+      <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] p-4 md:p-0 font-light">
+        <div className="w-full md:w-[50%] lg:w-[40%] break-words mt-[75px]">
+          <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">
+            {post.title}
+          </h1>
+          <div className="flex justify-center items-center mt-[1rem]">
+            <Image
+              width={1920}
+              height={1080}
+              src={post.feature_image}
+              alt={post.title}
+              className="max-h-[350px] object-cover"
+            />
+          </div>
+          {parse(post.html)}
+          <AffiliateCard />
+          <Divider />
+          <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
+            Recommended from Hodleveryday.com
+          </h2>
+          {postRelated?.map((blog: any) => (
+            <Related key={blog.id} blog={blog} />
+          ))}
         </div>
-        {parse(post.html)}
-        <AffiliateCard />
-        <Divider />
-        <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
-          Recommended from Hodleveryday.com
-        </h2>
-        {postRelated?.map((blog: any) => (
-          <Related key={blog.id} blog={blog} />
-        ))}
       </div>
-    </div>
+    </>
   );
 }
 

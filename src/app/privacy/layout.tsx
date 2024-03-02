@@ -18,6 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href="https://hodleveryday.com/privacy" />
+      </head>
       <body className={inter.className}>
         <Nav />
         {children}
