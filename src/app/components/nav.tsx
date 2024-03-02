@@ -6,7 +6,7 @@ import btc from "../assets/bitkub.jpeg";
 
 function nav() {
   return (
-    <header className="flex justify-between items-center w-full h-[75px] px-4 bg-white fixed drop-shadow-sm">
+    <header className="flex justify-between items-center w-full h-[75px] px-4 bg-white fixed drop-shadow-sm z-10">
       <div className="flex justify-center items-center">
         <Link href="/">
           <Image

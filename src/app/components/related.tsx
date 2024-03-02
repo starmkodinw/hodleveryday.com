@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function related({ blog }: any) {
   return (
-    <Link href={`/hodl/${blog.slug}`} key={blog.id} className="no-underline">
+    <Link href={`/blog/${blog.slug}`} key={blog.id} className="no-underline">
       <div key={blog.id} className="mb-[3rem] flex w-full h-[150px]">
         <Image
           width={1920}

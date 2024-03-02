@@ -16,7 +16,7 @@ async function blog() {
   return (
     <div className="flex flex-col w-full md:w-[50%] lg:w-[40%]">
       {blogs?.map((blog: any) => (
-        <Link href={`/hodl/${blog.slug}`} key={blog.id} className="no-underline">
+        <Link href={`/blog/${blog.slug}`} key={blog.id} className="no-underline">
           <div key={blog.id} className="mb-[3rem] flex w-full h-[150px]">
             <Image
               width={1920}

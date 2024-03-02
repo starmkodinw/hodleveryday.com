@@ -11,14 +11,14 @@ import Divider from "@/app/components/divider";
 import Image from "next/image";
 
 type Props = {
-  params: { hodlSlug: string };
+  params: { blogSlug: string };
 };
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = await getPost(params?.hodlSlug);
+  const post = await getPost(params?.blogSlug);
 
   return {
     robots: "index, follow",
@@ -37,7 +37,7 @@ export async function generateMetadata(
     ],
     openGraph: {
       type: "article",
-      url: `https://hodleveryday.com/hodl/${params?.hodlSlug}`,
+      url: `https://hodleveryday.com/hodl/${params?.blogSlug}`,
       title: post.title,
       description: post.excerpt,
       siteName: "hodleveryday",
@@ -56,7 +56,7 @@ export async function generateMetadata(
 }
 
 async function page({ params }: any) {
-  const post = await getPost(params?.hodlSlug);
+  const post = await getPost(params?.blogSlug);
   let postRelated: any[] = [];
 
   // post related
