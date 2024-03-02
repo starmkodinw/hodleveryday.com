@@ -1,24 +1,18 @@
-import Link from "next/link";
 import Nav from "./components/nav";
-import { getPosts } from "./ghost/post";
-import Affiliate from "./components/affiliate";
+import Footer from "./components/footer";
+import Blogs from "./components/blog";
 
 export default async function Home() {
-  const blogs = await getPosts();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
+    <>
       <Nav />
-      {blogs?.map((blog: any) => (
-        <Link href={`/hodl/${blog.slug}`} key={blog.id}>
-          <div key={blog.id} className="mt-4 mb-4">
-            {/* <img src={blog.feature_image} alt={blog.title} /> */}
-            <h2>{blog.title}</h2>
-            {/* <p>Slug : {blog.slug}</p> */}
+      <main className="flex min-h-screen flex-col items-center justify-center">
+          <div className="flex flex-col mt-[95px] items-center justify-center w-full">
+              <Blogs/>
           </div>
-        </Link>
-      ))}
-      <Affiliate />
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

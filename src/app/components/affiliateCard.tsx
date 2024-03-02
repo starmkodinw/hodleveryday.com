@@ -18,7 +18,7 @@ function affiliateCard() {
           <div className="kg-bookmark-thumbnail">
             <img
               src="https://hodleveryday.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpixel%20-%20logo.badb0d19.png&amp;w=384&amp;q=75"
-              alt=""
+              alt="affiliateCard-hodleveryday.com"
             />
           </div>
         </a>
@@ -44,7 +44,7 @@ function affiliateCard() {
           <div className="kg-bookmark-thumbnail">
             <img
               src="https://public.bnbstatic.com/static/images/common/ogImage.jpg"
-              alt=""
+              alt="affiliateCard-binance.com"
             />
           </div>
         </a>
@@ -68,7 +68,7 @@ function affiliateCard() {
           <div className="kg-bookmark-thumbnail">
             <img
               src="https://images.workpointtoday.com/workpointnews/2021/05/20205600/1621518944_38591_web_bizview3.jpg"
-              alt=""
+              alt="affiliateCard-bitkub.com"
             />
           </div>
         </a>
