@@ -4,7 +4,7 @@ import { getPost, getPosts, getPostsByTags } from "../../ghost/post";
 import parse from "html-react-parser";
 import AffiliateCard from "@/app/components/affiliateCard";
 import Related from "@/app/components/related";
-import Divider from "@/app/components/divider";
+import { Divider } from "@/app/components/divider";
 import Image from "next/image";
 
 type Props = {
