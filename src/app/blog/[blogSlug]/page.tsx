@@ -52,7 +52,10 @@ export async function generateMetadata(
       locale: "th_TH",
       images: [
         {
-          url: post.feature_image
+          url: post.feature_image,
+          alt: post.title,
+          width: 1920,
+          height: 1080,
         }
       ]
     },
@@ -63,7 +66,10 @@ export async function generateMetadata(
       description: excerpt,
       images: [
         {
-          url: post.feature_image
+          url: post.feature_image,
+          alt: post.title,
+          width: 1920,
+          height: 1080,
         }
       ]
     },

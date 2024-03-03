@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://hodleveryday.com/pixel - logo.png",
+        alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
+        width: 1920,
+        height: 1080,
       }
     ]
   },
@@ -38,6 +41,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://hodleveryday.com/pixel - logo.png",
+        alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
+        width: 1920,
+        height: 1080,
       }
     ]
   },
