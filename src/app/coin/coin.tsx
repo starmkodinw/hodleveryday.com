@@ -13,7 +13,10 @@ const Coin = async ({ symbol }: any) => {
   if (marketCap == 0) {
     marketCap = "N/A";
   } else {
-    marketCap = marketCap.toFixed(2).toString().replace(/\d(?=(\d{3})+\.)/g, "$&,");
+    marketCap = marketCap
+      .toFixed(2)
+      .toString()
+      .replace(/\d(?=(\d{3})+\.)/g, "$&,");
   }
   if (currentSuppy == 0) {
     currentSuppy = "N/A";
@@ -24,28 +27,34 @@ const Coin = async ({ symbol }: any) => {
 
   return (
     <div className="flex justify-between items-center w-full mb-4 gap-4">
-      <div className="flex flex-[0.1]">
-        <Image src={image} width={50} height={50} alt={name} />
+      <div className="flex flex-[0.2] md:flex-[0.1]">
+        <Image src={image} width={40} height={40} alt={name} />
       </div>
-      <div className="flex flex-[0.2] flex-col justify-between h-full">
+      <div className="flex flex-[0.25] md:flex-[0.2] flex-col justify-between h-full">
         <span className="font-[600]">{name}</span>
         <span className="font-light text-[#6B6B6B] text-[0.9rem]">{price}</span>
       </div>
-      <div className="flex flex-[0.1] flex-col justify-between h-full">
+      <div className="flex flex-[0.25] md:flex-[0.1] flex-col justify-between h-full">
         <span>Rank</span>
         <span className="font-light text-[#6B6B6B] text-[0.9rem]">{rank}</span>
       </div>
-      <div className="flex flex-[0.2] flex-col justify-between h-full">
+      <div className="flex flex-[0.3] md:flex-[0.2] flex-col justify-between h-full">
         <span>Market cap</span>
-        <span className="font-light text-[#6B6B6B] text-[0.9rem]">{marketCap}</span>
+        <span className="font-light text-[#6B6B6B] text-[0.9rem]">
+          {marketCap}
+        </span>
       </div>
-      <div className="flex flex-[0.2] flex-col justify-between h-full">
+      <div className="md:flex flex-[0.2] flex-col justify-between h-full hidden">
         <span>Supply</span>
-        <span className="font-light text-[#6B6B6B] text-[0.9rem]">{currentSuppy}</span>
+        <span className="font-light text-[#6B6B6B] text-[0.9rem]">
+          {currentSuppy}
+        </span>
       </div>
-      <div className="flex flex-[0.1] flex-col justify-between h-full">
+      <div className="md:flex flex-[0.1] flex-col justify-between h-full hidden">
         <span>Infinite</span>
-        <span className="font-light text-[#6B6B6B] text-[0.9rem]">{infinite ? "true" : "false"}</span>
+        <span className="font-light text-[#6B6B6B] text-[0.9rem]">
+          {infinite ? "true" : "false"}
+        </span>
       </div>
     </div>
   );
