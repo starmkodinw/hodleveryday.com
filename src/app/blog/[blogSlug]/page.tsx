@@ -22,6 +22,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = await getPost(params?.blogSlug);
+  let keywords = post.tags.map((tag: any) => tag.name);
+  let excerpt = post.excerpt.replace(/\n/g, "").slice(0, 130);
 
   return {
     robots: {
@@ -29,8 +31,8 @@ export async function generateMetadata(
       follow: true,
     },
     title: post.title,
-    description: post.excerpt,
-    keywords: [post.excerpt, "hodleveryday.com", "bitcoin", "BTC"],
+    description: excerpt,
+    keywords: [...keywords, "hodleveryday.com", "bitcoin", "BTC"],
     applicationName: "hodleveryday",
     authors: [{ name: "hodleveryday", url: "https://hodleveryday.com" }],
     creator: "hodleveryday",
@@ -45,7 +47,7 @@ export async function generateMetadata(
       type: "article",
       url: `https://hodleveryday.com/blog/${params?.blogSlug}`,
       title: post.title,
-      description: post.excerpt,
+      description: excerpt,
       siteName: "hodleveryday",
       locale: "th_TH",
       images: post.feature_image,
@@ -54,7 +56,7 @@ export async function generateMetadata(
       card: "summary_large_image",
       site: "@hodleveryday",
       title: post.title,
-      description: post.excerpt,
+      description: excerpt,
       images: post.feature_image,
     },
     abstract: post.excerpt,
