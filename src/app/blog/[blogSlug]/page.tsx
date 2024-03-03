@@ -50,30 +50,30 @@ export async function generateMetadata(
       description: excerpt,
       siteName: "hodleveryday",
       locale: "th_TH",
-      images: [
-        {
-          url: post.feature_image,
-          alt: post.title,
-          width: 1920,
-          height: 1080,
-          type: "image/jpeg",
-        }
-      ]
+      // images: [
+      //   {
+      //     url: post.feature_image,
+      //     alt: post.title,
+      //     width: 1920,
+      //     height: 1080,
+      //     type: "image/jpeg",
+      //   }
+      // ]
     },
     twitter: {
       card: "summary_large_image",
       site: "@hodleveryday",
       title: post.title,
       description: excerpt,
-      images: [
-        {
-          url: post.feature_image,
-          alt: post.title,
-          width: 1920,
-          height: 1080,
-          type: "image/jpeg",
-        }
-      ]
+      // images: [
+      //   {
+      //     url: post.feature_image,
+      //     alt: post.title,
+      //     width: 1920,
+      //     height: 1080,
+      //     type: "image/jpeg",
+      //   }
+      // ]
     },
     abstract: post.excerpt,
     alternates: {
