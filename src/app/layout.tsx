@@ -24,14 +24,22 @@ export const metadata: Metadata = {
     description: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
     siteName: "hodleveryday",
     locale: "th_TH",
-    images: "https://hodleveryday.com/pixel - logo.png",
+    images: [
+      {
+        url: "https://hodleveryday.com/pixel - logo.png",
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     site: "@hodleveryday",
     title: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
     description: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
-    images: "https://hodleveryday.com/pixel - logo.png",
+    images: [
+      {
+        url: "https://hodleveryday.com/pixel - logo.png",
+      }
+    ]
   },
   abstract: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
   verification: {

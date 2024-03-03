@@ -50,14 +50,22 @@ export async function generateMetadata(
       description: excerpt,
       siteName: "hodleveryday",
       locale: "th_TH",
-      images: post.feature_image,
+      images: [
+        {
+          url: post.feature_image
+        }
+      ]
     },
     twitter: {
       card: "summary_large_image",
       site: "@hodleveryday",
       title: post.title,
       description: excerpt,
-      images: post.feature_image,
+      images: [
+        {
+          url: post.feature_image
+        }
+      ]
     },
     abstract: post.excerpt,
     alternates: {
