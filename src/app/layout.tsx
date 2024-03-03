@@ -30,6 +30,7 @@ export const metadata: Metadata = {
         alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
         width: 1920,
         height: 1080,
+        type: "image/png",
       }
     ]
   },
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
         alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
         width: 1920,
         height: 1080,
+        type: "image/png",
       }
     ]
   },

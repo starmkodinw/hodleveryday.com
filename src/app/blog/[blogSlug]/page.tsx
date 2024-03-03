@@ -56,6 +56,7 @@ export async function generateMetadata(
           alt: post.title,
           width: 1920,
           height: 1080,
+          type: "image/jpeg",
         }
       ]
     },
@@ -70,6 +71,7 @@ export async function generateMetadata(
           alt: post.title,
           width: 1920,
           height: 1080,
+          type: "image/jpeg",
         }
       ]
     },
