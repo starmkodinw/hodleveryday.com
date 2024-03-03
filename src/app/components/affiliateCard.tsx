@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Logo from "../assets/pixel - logo.png"
 
 function affiliateCard() {
   return (
@@ -20,7 +21,7 @@ function affiliateCard() {
             <Image
               width={1920}
               height={1080}
-              src="https://hodleveryday.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpixel%20-%20logo.badb0d19.png&amp;w=384&amp;q=75"
+              src={Logo}
               alt="affiliateCard-hodleveryday.com"
               className="w-[250px] h-[250px] object-cover"
             />

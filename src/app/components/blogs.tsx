@@ -5,13 +5,13 @@ import Image from "next/image";
 
 async function blog() {
     const blogs = await getPosts();
-    // for (let i = 0; i < blogs.length; i++) {
-    //     blogs[i].created_at = new Date(blogs[i].created_at).toLocaleDateString("en-US", {
-    //         year: "numeric",
-    //         month: "short",
-    //         day: "numeric",
-    //     });
-    // }
+    for (let i = 0; i < blogs.length; i++) {
+        blogs[i].created_at = new Date(blogs[i].created_at).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+    }
   
   return (
     <div className="flex flex-col w-full md:w-[50%] lg:w-[40%]">

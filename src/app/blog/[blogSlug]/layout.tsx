@@ -11,18 +11,16 @@ export const metadata: Metadata = {
   keywords: "next.js, typescript, tailwindcss",
 };
 
-export default function RootLayout({
+export default function BlogLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Nav />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <section className={inter.className}>
+      <Nav />
+      {children}
+      <Footer />
+    </section>
   );
 }
