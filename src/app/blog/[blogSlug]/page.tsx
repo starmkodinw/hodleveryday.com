@@ -103,15 +103,15 @@ async function page({ params }: any) {
       }
     }
 
-    for (let i = 0; i < postRelated.length; i++) {
-      postRelated[i].created_at = new Date(
-        postRelated[i].created_at
-      ).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      });
-    }
+    // for (let i = 0; i < postRelated.length; i++) {
+    //   postRelated[i].created_at = new Date(
+    //     postRelated[i].created_at
+    //   ).toLocaleDateString("en-US", {
+    //     year: "numeric",
+    //     month: "short",
+    //     day: "numeric",
+    //   });
+    // }
   }
 
   return (
