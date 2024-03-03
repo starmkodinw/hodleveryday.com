@@ -5,7 +5,7 @@ import Image from "next/image";
 function related({ blog }: any) {
   return (
     <Link href={`/blog/${blog.slug}`} key={blog.id} className="no-underline">
-      <div key={blog.id} className="mb-[3rem] flex w-full h-[150px]">
+      <div key={blog.id} className="mb-[3rem] flex w-full h-[150px] text-[1rem] font-sans text-[#393939] font-light">
         <Image
           width={1920}
           height={1080}
@@ -15,7 +15,7 @@ function related({ blog }: any) {
         />
         <div className="flex-1 flex flex-col justify-between">
           <div>
-            <p className="mt-0 px-4 text-[1.25rem] text-[#242424]">
+            <p className="mt-0 px-4 text-[1.25rem] text-[#242424] font-bold">
               {blog.title}
             </p>
             <p className="mt-0 px-4 text-[1.rem] font-light text-[#6B6B6B]">

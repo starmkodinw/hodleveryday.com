@@ -4,7 +4,7 @@ import Logo from "../assets/pixel - logo.png"
 
 function affiliateCard() {
   return (
-    <div className="my-8">
+    <div className="mb-8">
       <figure className="kg-card kg-bookmark-card">
         <a
           className="kg-bookmark-container"

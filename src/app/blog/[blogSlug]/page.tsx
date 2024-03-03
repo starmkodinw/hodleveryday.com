@@ -130,6 +130,7 @@ async function page({ params }: any) {
             />
           </div>
           {parse(post.html)}
+          <div className="mb-8"></div>
           <AffiliateCard />
           <Divider />
           <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
