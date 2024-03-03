@@ -25,30 +25,30 @@ export const metadata: Metadata = {
     description: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
     siteName: "hodleveryday",
     locale: "th_TH",
-    // images: [
-    //   {
-    //     url: "https://hodleveryday.com/pixel - logo.png",
-    //     alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
-    //     width: 1024,
-    //     height: 1024,
-    //     type: "image/png",
-    //   }
-    // ]
+    images: [
+      {
+        url: "http://localhost:3000/wallpaper.jpeg",
+        alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
+        width: 1920,
+        height: 1080,
+        type: "image/jpeg",
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     site: "@hodleveryday",
     title: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
     description: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
-    // images: [
-    //   {
-    //     url: "https://hodleveryday.com/pixel - logo.png",
-    //     alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
-    //     width: 1024,
-    //     height: 1024,
-    //     type: "image/png",
-    //   }
-    // ]
+    images: [
+      {
+        url: "http://localhost:3000/wallpaper.jpeg",
+        alt: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
+        width: 1920,
+        height: 1080,
+        type: "image/jpeg",
+      }
+    ]
   },
   abstract: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
   verification: {
