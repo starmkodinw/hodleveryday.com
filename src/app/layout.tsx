@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./styles/globals.css";
 import "./styles/kg-card.css";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,9 +64,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <link rel="canonical" href="https://hodleveryday.com/" />
-      </head>
+        <meta name="description" content="hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ" />
+        <meta property="og:url" content="https://hodleveryday.com" key="ogurl" />
+        <meta property="og:image" content="https://hodleveryday.com/pixel - logo.png" key="ogimage" />
+        <meta property="og:site_name" content="hodleveryday.com" key="ogsitename" />
+        <meta property="og:title" content="hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ" key="ogtitle" />
+        <meta property="og:description" content="hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ" key="ogdesc" />
+      </Head>
       <body className={inter.className}>
         {children}
       </body>
