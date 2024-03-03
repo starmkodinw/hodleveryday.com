@@ -6,6 +6,7 @@ import "./styles/kg-card.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hodleveryday.com"),
   robots: "index,follow",
   title: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
   description: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
@@ -31,6 +32,9 @@ export const metadata: Metadata = {
     images: "https://hodleveryday.com/pixel - logo.png",
   },
   abstract: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
+  verification: {
+    google: "uEacq0IeLU8EBD7DPEeF_4xEd8LslvoJ-4omouVZSkc",
+  }
 };
 
 export default function RootLayout({
