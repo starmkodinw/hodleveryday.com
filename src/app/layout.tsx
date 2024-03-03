@@ -7,7 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hodleveryday.com"),
-  robots: "index,follow",
+  robots: {
+    index: true,
+    follow: true,
+  },
   title: "hodleveryday.com - เว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร บทความเกี่ยวกับคริปโตเคอร์เรนซี่ Bitcoin และ Blockchain เหมาะสำหรับนักลงทุนทุกระดับ",
   description: "hodleveryday.com เป็นเว็บไซต์ที่รวบรวมข้อมูล ข่าวสาร และบทวิเคราะห์เกี่ยวกับคริปโตเคอร์เรนซี่ เหมาะสำหรับนักลงทุนทุกระดับ ไม่ว่าจะเป็นมือใหม่หรือมืออาชีพ",
   keywords: ["hodleveryday.com", "bitcoin", "BTC", "cryptocurrency", "คริปโตเคอร์เรนซี่", "เงินดิจิทัล", "บิทคอยน์", "บล็อกเชน", "blockchain"],
