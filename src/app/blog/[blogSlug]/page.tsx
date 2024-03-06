@@ -112,6 +112,17 @@ async function page({ params }: any) {
         day: "numeric",
       });
     }
+    
+    // Randomize the postRelated array
+    for (let i = postRelated.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [postRelated[i], postRelated[j]] = [postRelated[j], postRelated[i]];
+    }
+
+    // let limit = 4;
+    // if (postRelated.length > limit) {
+    //   postRelated = postRelated.slice(0, limit);
+    // }
   }
 
   return (

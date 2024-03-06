@@ -1,7 +1,7 @@
 import Nav from "./components/nav";
 import Footer from "./components/footer";
 import Blogs from "./components/blogs";
-import AffiliateCard from "@/app/components/affiliateCard";
+import AffiliateCardSmall from "@/app/components/affiliateCardSmall";
 import Coin from "./coin/coin";
 import { DividerSmall } from "./components/divider";
 
@@ -18,7 +18,7 @@ export default async function Home() {
               <Coin symbol="BNB" />
               <Coin symbol="KUB" />
               <DividerSmall />
-              <AffiliateCard />
+              <AffiliateCardSmall />
               <DividerSmall />
               <Blogs />
             </div>
