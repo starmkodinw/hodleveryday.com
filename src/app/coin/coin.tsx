@@ -57,12 +57,12 @@ const Coin = async ({ symbol }: any) => {
           {currentSuppy}
         </span>
       </div>
-      <div className="md:flex flex-[0.1] flex-col justify-between h-full hidden">
+      {/* <div className="md:flex flex-[0.1] flex-col justify-between h-full hidden">
         <span>Infinite</span>
         <span className="font-light text-[#6B6B6B] text-[0.9rem]">
           {infinite ? "true" : "false"}
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };
