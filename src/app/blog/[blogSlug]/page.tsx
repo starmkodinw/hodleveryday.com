@@ -32,7 +32,7 @@ export async function generateMetadata(
     },
     title: post.title,
     description: excerpt,
-    keywords: [...keywords, "hodleveryday.com", "bitcoin", "BTC"],
+    keywords: [...keywords, "hodleveryday.com"],
     applicationName: "hodleveryday",
     authors: [{ name: "hodleveryday", url: "https://hodleveryday.com" }],
     creator: "hodleveryday",
