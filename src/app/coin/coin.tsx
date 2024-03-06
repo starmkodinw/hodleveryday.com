@@ -13,17 +13,24 @@ const Coin = async ({ symbol }: any) => {
   if (marketCap == 0) {
     marketCap = "N/A";
   } else {
-    marketCap = marketCap
-      .toFixed(2)
-      .toString()
-      .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+    marketCap = formatMarketCap(marketCap)
   }
   if (currentSuppy == 0) {
     currentSuppy = "N/A";
   } else {
-    currentSuppy = currentSuppy.toString().replace(/\d(?=(\d{3})+\.)/g, "$&,");
+    currentSuppy = formatMarketCap(currentSuppy);
   }
   const rank = data.data[symbol][0].cmc_rank;
+
+  function formatMarketCap(value: number) {
+    if (value >= 1e9) {
+      return (value / 1e9).toFixed(2) + ' B';
+    } else if (value >= 1e6) {
+      return (value / 1e6).toFixed(2) + ' M';
+    } else {
+      return value.toString();
+    }
+  }
 
   return (
     <div className="flex justify-between items-center w-full mb-4 gap-4">
