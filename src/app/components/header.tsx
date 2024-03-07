@@ -3,11 +3,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../assets/pixel - logo.png";
-import btc from "../assets/bitkub.jpeg";
 import fb from "../assets/fb.png";
 import x from "../assets/x.png";
 
-function header() {
+function Header() {
   const [position, setPosition] = useState(0)
     const [visible, setVisible] = useState(true) 
     useEffect(()=> {
@@ -76,4 +75,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;
