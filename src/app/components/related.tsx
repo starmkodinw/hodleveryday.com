@@ -18,7 +18,7 @@ function related({ blog }: any) {
             <p className="mt-0 px-4 text-[1.25rem] text-[#242424] font-bold">
               {blog.title}
             </p>
-            <p className="mt-0 px-4 text-[1.rem] font-light text-[#6B6B6B]">
+            <p className="mt-0 px-4 text-[0.9.rem] md:text-[1.rem] font-light text-[#6B6B6B]">
               {blog.excerpt.substring(0, 100)}...
             </p>
           </div>
