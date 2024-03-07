@@ -11,6 +11,10 @@ async function blog() {
             month: "short",
             day: "numeric",
         });
+
+        if (blogs[i].title.length > 45) {
+            blogs[i].title = blogs[i].title.substring(0, 45) + "...";
+        }
     }
   
   return (

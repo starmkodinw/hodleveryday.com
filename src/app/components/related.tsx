@@ -3,6 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 function related({ blog }: any) {
+  if (blog.title.length > 45) {
+    blog.title = blog.title.substring(0, 45) + "...";
+  }
+
   return (
     <Link href={`/blog/${blog.slug}`} key={blog.id} className="no-underline">
       <div key={blog.id} className="mb-[3rem] flex w-full h-[150px] text-[1rem] font-sans text-[#393939] font-light">
