@@ -127,8 +127,8 @@ async function page({ params }: any) {
   }
 
   return (
-      <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] p-4 md:p-0 font-light">
-        <div className="w-full md:w-[50%] lg:w-[40%] break-words mt-[75px]">
+      <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] md:p-0 font-light">
+        <div className="w-full md:w-[50%] lg:w-[40%] break-words mt-[75px] p-4">
           <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">
             {post.title}
           </h1>
@@ -150,6 +150,9 @@ async function page({ params }: any) {
           <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
             Recommended from Hodleveryday.com
           </h2>
+        </div>
+
+        <div className="w-full md:w-[50%] lg:w-[40%] break-words">
           {postRelated?.map((blog: any) => (
             <Related key={blog.id} blog={blog} />
           ))}
