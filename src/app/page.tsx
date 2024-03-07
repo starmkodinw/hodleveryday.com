@@ -1,4 +1,4 @@
-import Nav from "./components/nav";
+import Nav from "./components/header";
 import Footer from "./components/footer";
 import Blogs from "./components/blogs";
 import AffiliateCardSmall from "@/app/components/affiliateCardSmall";

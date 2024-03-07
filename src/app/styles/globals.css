@@ -30,3 +30,16 @@ strong, h1 {
 figcaption {
   font-size: 1rem;
 }
+
+
+.visible2 {
+  /* display: flex; */
+  top: 0;
+  transition: top 0.4s ease-out;
+}
+
+.hidden2 {
+  /* display: none; */
+  top: -80px;
+  transition: top 0.42s ease-out;
+}
