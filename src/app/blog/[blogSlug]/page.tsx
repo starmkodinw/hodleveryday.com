@@ -6,6 +6,7 @@ import AffiliateCard from "@/app/components/affiliateCard";
 import Related from "@/app/components/related";
 import { Divider } from "@/app/components/divider";
 import Image from "next/image";
+import SocialShare from "@/app/components/socialShare";
 
 type Props = {
   params: { blogSlug: string };
@@ -141,7 +142,9 @@ async function page({ params }: any) {
             />
           </div>
           {parse(post.html)}
-          <div className="mb-8"></div>
+          <div className="mb-[1.5rem]"></div>
+          <SocialShare url={`https://hodleveryday.com/blog/${params?.blogSlug}`} />
+          <div className="mb-8 md:mb-[5rem]"></div>
           <AffiliateCard />
           <Divider />
           <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
