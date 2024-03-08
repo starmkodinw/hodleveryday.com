@@ -1,14 +1,16 @@
 import React from "react";
 import { getLastQuote, getSymbolImage } from "./api";
 import Image from "next/image";
+import { cookies } from "next/headers";
 
 const Coin = async ({ symbol }: any) => {
+  const cookieStore = cookies();  
+  const theme = cookieStore.get("theme") || "light";
   const data = await getLastQuote(symbol);
   const image = await getSymbolImage(symbol);
   const name = data.data[symbol][0].name;
   const price = data.data[symbol][0].quote.USD.price.toFixed(2);
   let currentSuppy = data.data[symbol][0].circulating_supply.toFixed(2);
-  const infinite = data.data[symbol][0].infinite_supply;
   let marketCap = data.data[symbol][0].quote.USD.market_cap;
   if (marketCap == 0) {
     marketCap = "N/A";
@@ -57,12 +59,6 @@ const Coin = async ({ symbol }: any) => {
           {currentSuppy}
         </span>
       </div>
-      {/* <div className="md:flex flex-[0.1] flex-col justify-between h-full hidden">
-        <span>Infinite</span>
-        <span className="font-light text-[#6B6B6B] text-[0.9rem]">
-          {infinite ? "true" : "false"}
-        </span>
-      </div> */}
     </div>
   );
 };
