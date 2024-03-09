@@ -12,7 +12,7 @@ export default async function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center">
         <div className="flex flex-col mt-[75px] items-center justify-center w-full">
         
-            <div className="w-full md:w-[50%] lg:w-[40%] break-words">
+            <div className="w-full md:p-4 2xl:p-0 xl:w-[40%] break-words">
               <Coin symbol="BTC" />
               <Coin symbol="ETH" />
               <Coin symbol="BNB" />

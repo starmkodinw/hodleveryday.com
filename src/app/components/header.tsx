@@ -33,7 +33,7 @@ function Header() {
             width={1920}
             height={1080}
             alt="Picture of hodleveryday.com"
-            className="w-[65px] h-[65px] rounded-full cursor-pointer"
+            className="w-[35px] h-[35px] lg:w-[65px] lg:h-[65px] rounded-full cursor-pointer"
           />
         </Link>
         <Link href="/" className="no-underline font-normal text-black">
