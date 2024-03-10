@@ -3,7 +3,32 @@ const key = process.env.KEY;
 
 export async function getPosts() {
   const response = await fetch(
-    `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all`
+    `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all&include=authors,tags`
+  );
+  const data = await response.json();
+  if (data?.posts?.length > 0) {
+    for (let i = 0; i < data?.posts?.length; i++) {
+      if (
+        data?.posts[i].tags === undefined ||
+        data?.posts[i].tags.length === 0
+      ) {
+        data.posts[i].tags = [{ name: "crypto" }];
+      }
+      if (data?.posts[i].excerpt === undefined) {
+        data.posts[i].excerpt = "";
+      }
+      if (data?.posts[i].feature_image === null) {
+        data.posts[i].feature_image = "https://hodleveryday.com/wallpaper.jpeg";
+      }
+    }
+    return data?.posts;
+  }
+  return [];
+}
+
+export async function getPostsUser() {
+  const response = await fetch(
+    `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all&include=authors,tags&filter=tag:user`
   );
   const data = await response.json();
   if (data?.posts?.length > 0) {
@@ -28,7 +53,7 @@ export async function getPosts() {
 
 export async function getPostsByTags(tag: string) {
   const response = await fetch(
-    `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all&filter=tag:${tag}`
+    `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all&filter=tag:${tag}&include=authors,tags`
   );
   const data = await response.json();
   if (data?.posts?.length > 0) {

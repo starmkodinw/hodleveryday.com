@@ -154,10 +154,14 @@ async function page({ params }: any) {
         />
         <div className="mb-8 md:mb-[5rem]"></div>
         <AffiliateCard />
-        <Divider />
-        <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
-          Recommended from Hodleveryday.com
-        </h2>
+        {postRelated?.length > 0 && (
+          <>
+            <Divider />
+            <h2 className="text-[#242424] text-[1rem] font-[500] mb-[1.5rem]">
+              Recommended from Hodleveryday.com
+            </h2>
+          </>
+        )}
       </div>
 
       <div className="w-full xl:w-[40%] break-words">
