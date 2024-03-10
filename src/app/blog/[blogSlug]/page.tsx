@@ -23,8 +23,14 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const post = await getPost(params?.blogSlug);
-  let keywords = post.tags.map((tag: any) => tag.name);
-  let excerpt = post.excerpt.replace(/\n/g, "").slice(0, 130);
+  let keywords = [{ name: "crypto" }] as any[];
+  if (post?.tags?.length > 0) {
+    keywords = post.tags;
+  }
+  let excerpt = "";
+  if (post?.excerpt === undefined) {
+    excerpt = post?.excerpt?.replace(/\n/g, "").slice(0, 130);
+  }
 
   return {
     robots: {
@@ -58,8 +64,8 @@ export async function generateMetadata(
           width: 1920,
           height: 1080,
           type: "image/jpeg",
-        }
-      ]
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -73,13 +79,13 @@ export async function generateMetadata(
           width: 1920,
           height: 1080,
           type: "image/jpeg",
-        }
-      ]
+        },
+      ],
     },
     abstract: post.excerpt,
     alternates: {
       canonical: `https://hodleveryday.com/blog/${params?.blogSlug}`,
-    }
+    },
   };
 }
 
@@ -89,7 +95,7 @@ async function page({ params }: any) {
 
   // post related
   {
-    for (let i = 0; i < post.tags.length; i++) {
+    for (let i = 0; i < post?.tags?.length; i++) {
       const posts = (await getPostsByTags(post.tags[i].name)) as any;
       postRelated.push(...posts);
     }
@@ -113,7 +119,7 @@ async function page({ params }: any) {
         day: "numeric",
       });
     }
-    
+
     // Randomize the postRelated array
     for (let i = postRelated.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -127,37 +133,39 @@ async function page({ params }: any) {
   }
 
   return (
-      <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] font-light">
-        <div className="w-full xl:w-[40%] break-words mt-[75px] p-4 2xl:p-0">
-          <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">
-            {post.title}
-          </h1>
-          <div className="flex justify-center items-center mt-[1rem]">
-            <Image
-              width={1920}
-              height={1080}
-              src={post.feature_image}
-              alt={post.title}
-              className="max-h-[350px] object-cover"
-            />
-          </div>
-          {parse(post.html)}
-          <div className="mb-[1.5rem]"></div>
-          <SocialShare url={`https://hodleveryday.com/blog/${params?.blogSlug}`} />
-          <div className="mb-8 md:mb-[5rem]"></div>
-          <AffiliateCard />
-          <Divider />
-          <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
-            Recommended from Hodleveryday.com
-          </h2>
+    <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] font-light">
+      <div className="w-full xl:w-[40%] break-words mt-[75px] p-4 2xl:p-0">
+        <h1 className="text-[2.2rem] md:text-[2.8rem] font-bold">
+          {post.title}
+        </h1>
+        <div className="flex justify-center items-center mt-[1rem]">
+          <Image
+            width={1920}
+            height={1080}
+            src={post.feature_image}
+            alt={post.title}
+            className="max-h-[350px] object-cover"
+          />
         </div>
-
-        <div className="w-full xl:w-[40%] break-words">
-          {postRelated?.map((blog: any) => (
-            <Related key={blog.id} blog={blog} />
-          ))}
-        </div>
+        {parse(post.html)}
+        <div className="mb-[1.5rem]"></div>
+        <SocialShare
+          url={`https://hodleveryday.com/blog/${params?.blogSlug}`}
+        />
+        <div className="mb-8 md:mb-[5rem]"></div>
+        <AffiliateCard />
+        <Divider />
+        <h2 className="text-[#242424] text-[1.5rem] font-[500] mb-[1.5rem]">
+          Recommended from Hodleveryday.com
+        </h2>
       </div>
+
+      <div className="w-full xl:w-[40%] break-words">
+        {postRelated?.map((blog: any) => (
+          <Related key={blog.id} blog={blog} />
+        ))}
+      </div>
+    </div>
   );
 }
 
