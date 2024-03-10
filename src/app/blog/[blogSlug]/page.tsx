@@ -95,8 +95,8 @@ async function page({ params }: any) {
 
   // post related
   {
-    for (let i = 0; i < post?.tags?.length; i++) {
-      const posts = (await getPostsByTags(post.tags[i].name)) as any;
+    for (let i = 0; i < post.tags.length; i++) {
+      const posts = (await getPostsByTags(post?.tags[i].name)) as any;
       postRelated.push(...posts);
     }
 

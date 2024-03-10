@@ -1,7 +1,9 @@
+import { unstable_noStore as noStore } from 'next/cache';
 const url = process.env.URL;
 const key = process.env.KEY;
 
 export async function getPosts() {
+  noStore();
   const response = await fetch(
     `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all`
   );
@@ -9,10 +11,10 @@ export async function getPosts() {
   if (data?.posts?.length > 0) {
     for (let i = 0; i < data?.posts?.length; i++) {
       if (
-        data?.posts[0].tags === undefined ||
-        data?.posts[0].tags.length === 0
+        data?.posts[i].tags === undefined ||
+        data?.posts[i].tags.length === 0
       ) {
-        data.posts[0].tags = [{ name: "crypto" }];
+        data.posts[i].tags = [{ name: "crypto" }];
       }
       if (data?.posts[i].excerpt === undefined) {
         data.posts[i].excerpt = "";
@@ -27,14 +29,33 @@ export async function getPosts() {
 }
 
 export async function getPostsByTags(tag: string) {
+  noStore();
   const response = await fetch(
     `${url}/ghost/api/v3/content/posts/?key=${key}&limit=all&filter=tag:${tag}`
   );
   const data = await response.json();
-  return data?.posts || [];
+  if (data?.posts?.length > 0) {
+    for (let i = 0; i < data?.posts?.length; i++) {
+      if (
+        data?.posts[i].tags === undefined ||
+        data?.posts[i].tags.length === 0
+      ) {
+        data.posts[i].tags = [{ name: "crypto" }];
+      }
+      if (data?.posts[i].excerpt === undefined) {
+        data.posts[i].excerpt = "";
+      }
+      if (data?.posts[i].feature_image === null) {
+        data.posts[i].feature_image = "https://hodleveryday.com/wallpaper.jpeg";
+      }
+    }
+    return data?.posts;
+  }
+  return [];
 }
 
 export async function getPost(slug: string) {
+  noStore();
   const response = await fetch(
     `${url}/ghost/api/v3/content/posts/slug/${slug}/?key=${key}&include=authors,tags`
   );
@@ -56,12 +77,14 @@ export async function getPost(slug: string) {
 }
 
 export async function getTags() {
+  noStore();
   const response = await fetch(`${url}/ghost/api/v3/content/tags/?key=${key}`);
   const data = await response.json();
   return data;
 }
 
 export async function getTagsSlug(slug: string) {
+  noStore();
   const response = await fetch(
     `${url}/ghost/api/v3/content/tags/slug/${slug}/?key=${key}`
   );

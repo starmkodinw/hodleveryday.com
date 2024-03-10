@@ -8,8 +8,10 @@ import parse from "html-react-parser";
 import SocialShare from "@/app/components/socialShare";
 import { DividerBottom } from "@/app/components/divider";
 import AffiliateCard from "@/app/components/affiliateCard";
+import { useRouter } from 'next/navigation'
 
 function Page() {
+  const router = useRouter()
   const [value, setValue] = useState("");
   const [excert, setExcert] = useState("");
   const [title, setTitle] = useState("");
@@ -51,20 +53,26 @@ function Page() {
   };
 
   const setHtml = (content: any, delta: any, source: any, editor: any) => {
-    if(source === "user") {
+    if (source === "user") {
       setValue(editor.getHTML());
       setExcert(editor.getText());
     }
   };
 
-  const handlePublish = () => {
+  const handlePublish = async () => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title: title, html: value, status: "published", excert: excert, tags : [{ name: "KUB"}]}),
+      body: JSON.stringify({
+        title: title,
+        html: value,
+        status: "published",
+        excert: excert,
+      }),
     };
-    console.log(requestOptions.body);
-    return
+    fetch("https://api-hodleveryday-8br3a.ondigitalocean.app/post", requestOptions)
+      .then((response) => router.push("/"))
+      .then((data) => console.log(data));
   };
 
   return (
@@ -110,9 +118,12 @@ function Page() {
         <AffiliateCard />
 
         <div className="flex justify-end mb-4">
-          <button className="bg-[#5585ff] text-white px-4 py-2 rounded-md text-sm font-bold" onClick={() => {
-            handlePublish();
-          }}>
+          <button
+            className="bg-[#5585ff] text-white px-4 py-2 rounded-md text-sm font-bold"
+            onClick={() => {
+              handlePublish();
+            }}
+          >
             Publish
           </button>
         </div>
