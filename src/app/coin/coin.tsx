@@ -1,15 +1,15 @@
 import React from "react";
 import { getLastQuote, getSymbolImage } from "./api";
 import Image from "next/image";
-import { cookies } from "next/headers";
 
 const Coin = async ({ symbol }: any) => {
-  const cookieStore = cookies();  
-  const theme = cookieStore.get("theme") || "light";
   const data = await getLastQuote(symbol);
+  const change = data.data[symbol][0].quote.USD.percent_change_24h.toFixed(2);
+  const side = change > 0 ? "+" : "";
+  const color = change > 0 ? "text-[#00C689]" : "text-[#FF4D4F]";
   const image = await getSymbolImage(symbol);
   const name = data.data[symbol][0].name;
-  const price = data.data[symbol][0].quote.USD.price.toFixed(2);
+  const price = data.data[symbol][0].quote.USD.price.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let currentSuppy = data.data[symbol][0].circulating_supply.toFixed(2);
   let marketCap = data.data[symbol][0].quote.USD.market_cap;
   if (marketCap == 0) {
@@ -41,7 +41,7 @@ const Coin = async ({ symbol }: any) => {
       </div>
       <div className="flex flex-[0.25] md:flex-[0.2] flex-col justify-between h-full">
         <span className="font-[600]">{name}</span>
-        <span className="font-light text-[#6B6B6B] text-[0.9rem]">{price}</span>
+        <span className="font-light text-[#6B6B6B] text-[0.9rem]">{price} <span className={`text-[0.7rem] font-bold ${color}`}>{side}{change}%</span></span>
       </div>
       <div className="flex flex-[0.25] md:flex-[0.1] flex-col justify-between h-full">
         <span>Rank</span>
