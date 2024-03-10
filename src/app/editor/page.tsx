@@ -78,6 +78,9 @@ function Page() {
   return (
     <div className="flex w-full h-full justify-center items-center flex-col text-[1rem] md:text-[1.2rem] font-sans text-[#393939] font-light">
       <div className="w-full xl:w-[40%] break-words mt-[75px] p-4 2xl:p-0">
+        <div className="flex justify-start mb-2 text-sm font-light text-[#7d7d7d]">
+          เพื่อสังคมแห่งการแบ่งปัน กรุณาเขียนเนื้อหาที่มีคุณค่าและเป็นประโยชน์
+        </div>
         {/* Editor */}
         <div className="flex justify-center items-center text-center">
           <h2 className="font-bold">Title </h2>
@@ -117,15 +120,22 @@ function Page() {
         <div className="mb-8 md:mb-[5rem]"></div>
         <AffiliateCard />
 
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-2">
           <button
             className="bg-[#5585ff] text-white px-4 py-2 rounded-md text-sm font-bold"
             onClick={() => {
+              if (title == "" || value == "") {
+                alert("Title and content cannot be empty");
+                return
+              }
               handlePublish();
             }}
-          >
+            >
             Publish
           </button>
+        </div>
+        <div className="flex justify-end mb-4 text-sm font-light text-[#7d7d7d]">
+          ทีมงานจะตรวจสอบข้อมูลก่อนเผยแพร่ภายใน 24 ชั่วโมง
         </div>
       </div>
     </div>
