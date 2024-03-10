@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "../assets/pixel - logo.png";
 import fb from "../assets/fb.png";
 import x from "../assets/x.png";
+import discord from "../assets/discord.png";
 import write from "../assets/write-svgrepo-com.png";
 
 function Header() {
@@ -63,6 +64,19 @@ function Header() {
             className="w-[28px] h-[28px] rounded-full cursor-pointer mr-2"
           />
           Write
+        </Link>
+        <Link
+          href="https://discord.gg/28qb3CRa"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Image
+            src={discord}
+            width={1920}
+            height={1080}
+            alt="fb share"
+            className="w-[32px] h-[32px] rounded-full cursor-pointer"
+          />
         </Link>
         <Link
           href="https://web.facebook.com/profile.php?id=61556802667637"
