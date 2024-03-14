@@ -5,7 +5,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'ninjaarmyza.ghost.io',
+                hostname: 'hodleveryday.ghost.io',
                 port: '',
                 pathname: '/content/images/**',
             },
